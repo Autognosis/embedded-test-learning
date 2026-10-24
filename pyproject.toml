@@ -7,7 +7,10 @@ requires-python = ">=3.13"
 dependencies = []
 
 [dependency-groups]
-dev = [
-    "pytest>=9.1.1",
-    "ruff>=0.17.2",
-]
+dev = ["pytest>=9.1.1", "ruff>=0.17.2"]
+
+# 配置 pytest
+[tool.pytest.ini_options]
+testpaths = ["tests"] # 测试文件目录
+pythonpath = ["src"]  # Python 文件目录，方便引用自有包。 # 如若使用了规范的 package 目录，则可以不添加此项
+addopts = "-ra -q"       # “-ra -q” 简略版
